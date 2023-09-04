@@ -31,7 +31,7 @@ class SectionsController extends Controller
     public function update(Request $request, $id):JsonResponse
     {
        
-        return response()->json($this->sectionsRepository->updateSection($request->html,$id),200);      
+        return response()->json($this->sectionsRepository->updateSection($request->Html,$id),200);      
     
     }
 

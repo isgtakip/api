@@ -39,5 +39,16 @@ class CustomerMessagesController extends Controller
 
     }
 
+    public function updateMessageStatus(Request $request): JsonResponse 
+    {
+
+        return response()->json($this->customerMessageRepository->updateMessageStatus($request->messages));
+    }
+
+    public function destroy($id):JsonResponse{
+
+        return response()->json($this->customerMessageRepository->deleteMessage($id));
+    }
+
 
 }

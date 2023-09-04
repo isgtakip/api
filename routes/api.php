@@ -49,6 +49,7 @@ Route::post('/sanctum/token', function (Request $request) {
 
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::apiResource('customer/messages',CustomerMessagesController::class);
+    Route::post('customer/message/updateMessageStatus',[CustomerMessagesController::class, 'updateMessageStatus']);
     Route::apiResource('sections', SectionsController::class);
 });
 
