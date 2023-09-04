@@ -16,7 +16,7 @@ class CustomerMessagesRepository implements ICustomerMessage
                     ->orWhere(DB::raw('lower(Email)'), 'like', '%' . mb_strtolower($search) . '%')
                     ->orWhere(DB::raw('lower(Phone)'), 'like', '%' . mb_strtolower($search) . '%');
          })->where('Deleted','==',0)->orderBy('id','desc')
-           ->paginate(10)
+           ->paginate($per_page)
            ->appends(request()->query()),200);
 
 /*
